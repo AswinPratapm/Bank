@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<br>
+<center><h2>Login to Secure.IT Bank</h2></center>
+<br>
+<br><center>
+<form action = "login" method="post">
+    {% csrf_token %}
+    <input type="text" name="username" placeholder="Username*"><br>
+    <input type="password" name="password" placeholder="Password*"><br>
+    <input type="submit" class="btn btn-secondary">
+</form></center>
+<br>
+<br>
+<div class="container">
+    <ul>
+        <li>Mandatory fields are marked with an asterisk (*) </li>
+        <li>Do not provide your username and password anywhere other than in this page</li>
+        <li>Your username and password are highly confidential. Never part with them.Secure.IT Bank will never ask for this information.</li>
+
+    </ul>
+          <center>  <h5>New user?</h5><a href="{% url 'auth:register' %}" class="btn btn-success">Register now!!!</a></center>
+    <br><br><br>
+<p>NEVER respond to any popup,email, SMS or phone call, no matter how appealing or official looking, seeking your personal information such as username, password(s), mobile number, ATM Card details, etc. Such communications are sent or created by fraudsters to trick you into parting with your credentials.</p>
+
+</div>
+<br>
+<br>
+{% endblock %}

@@ -1,0 +1,364 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title> Welcome to Secure.it Bank</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{% static 'assets/img/favicon.png' %}" rel="icon">
+  <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+<script>
+var Professionobj = {
+    "Kannur": ["Thalassery", "Kannur City", "Pinarai"],
+    "Kozhikode": ["Westhill", "Beypore", "YMCA", "Mavoor"],
+    "Eranakulam": ["Aluva", "Fort Kochi", "Marad", "Trikakara"],
+    "Palakkad": ["Palakkad", "Shornur", "Pattambi", "Mannarkkad"],
+    "Thiruvananthapuram": ["Varkala", "Kovalam", "Trivandrum"],
+    "Wayanad": ["Kalpetta", "Sulthan Bathery", "Mananthavady"]
+
+}
+window.onload = function() {
+  var ProfessionSel = document.getElementById("Profession");
+  var SpecialismSel = document.getElementById("Specialism");
+  for (var x in Professionobj) {
+    ProfessionSel.options[ProfessionSel.options.length] = new Option(x, x);
+  }
+    ProfessionSel.onchange = function() {    //empty Chapters- and Topics- dropdowns
+    SpecialismSel.length = 1;
+    //display correct values
+    var y = Professionobj[ProfessionSel.value];
+    for (var i = 0; i < y.length; i++ ) {
+  SpecialismSel.options[SpecialismSel.options.length] = new Option(y[i], y[i]);
+ }
+}
+}
+</script>
+</head>
+
+<body>
+
+  <!-- ======= Top Bar ======= -->
+  <section id="topbar" class="d-flex align-items-center">
+    <div class="container d-flex justify-content-center justify-content-md-between">
+      <div class="contact-info d-flex align-items-center">
+        <i class="bi bi-envelope-fill"></i><a href="mailto:appzaswin222@gmail.com">secure.it@dcbanks.com</a>
+        <i class="bi bi-phone-fill phone-icon"></i> +1 5589 55488 55
+      </div>
+      <div class="social-links d-none d-md-block">
+        <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <h1 class="logo"><a href="{% url 'bankapp:home' %}">Secure.IT</a></h1><br>
+
+
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo"><img src="{% static 'assets/img/logo.png' %}" alt="" class="img-fluid"></a>-->
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="{% url 'bankapp:home' %}">Home</a></li>
+            <li><a class="nav-link scrollto" href="#about">About</a></li>
+            <li><a class="nav-link scrollto" href="#contact">Contact us</a></li>
+<!--          <li><a class="nav-link scrollto" href="#services">Services</a></li>-->
+<!--          <li><a class="nav-link scrollto " href="#portfolio">Portfolio</a></li>-->
+<!--          <li><a class="nav-link scrollto" href="#pricing">Pricing</a></li>-->
+<!--          <li><a class="nav-link scrollto" href="#team">Team</a></li>-->
+          <li class="dropdown"><a href="#"><span>Branches</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+
+<!--              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>-->
+
+<!--              </li>-->
+              <li class="dropdown"><a href="https://en.wikipedia.org/wiki/Kozhikode">Kozhikode<i class="bi bi-chevron-right"></i></a>
+                 <ul>
+                  <li><a href="#">Westhill</a></li>
+                  <li><a href="#">Beypore</a></li>
+                  <li><a href="#">YMCA</a></li>
+                  <li><a href="#">Mavoor</a></li>
+
+                </ul>
+              </li>
+              <li class="dropdown"><a href="https://en.wikipedia.org/wiki/Kannur">Kannur<i class="bi bi-chevron-right"></i></a>
+                 <ul>
+                  <li><a href="#">Thalassery</a></li>
+                  <li><a href="#">Kannur city</a></li>
+                  <li><a href="#">Pinarai</a></li>
+
+                </ul>
+              </li>
+              <li class="dropdown"><a href="https://en.wikipedia.org/wiki/Ernakulam_district">Eranakulam<i class="bi bi-chevron-right"></i></a>
+                 <ul>
+                  <li><a href="#">Aluva</a></li>
+                  <li><a href="#">Fort Kochi</a></li>
+                  <li><a href="#">Marad</a></li>
+                  <li><a href="#">Trikakara</a></li>
+
+                </ul>
+              </li>
+              <li class="dropdown"><a href="https://en.wikipedia.org/wiki/Palakkad">Palakkad<i class="bi bi-chevron-right"></i></a>
+                 <ul>
+                  <li><a href="#">Palakkad</a></li>
+                  <li><a href="#">Shornur</a></li>
+                  <li><a href="#">Pattambi</a></li>
+                  <li><a href="#">Mannarkad</a></li>
+
+                </ul>
+              </li>
+              <li class="dropdown"><a href="https://en.wikipedia.org/wiki/Thiruvananthapuram_district">Thiruanandapuram<i class="bi bi-chevron-right"></i></a>
+                 <ul>
+                  <li><a href="#">Varkala</a></li>
+                  <li><a href="#">Kovalam</a></li>
+                  <li><a href="#">Trivandrum</a></li>
+
+                </ul>
+              </li>
+              <li class="dropdown"><a href="https://en.wikipedia.org/wiki/Wayanad_district">Wayanad<i class="bi bi-chevron-right"></i></a>
+                 <ul>
+                  <li><a href="#">Kalpetta</a></li>
+                  <li><a href="#">Sulthan Bathery</a></li>
+                  <li><a href="#">Mananthavady</a></li>
+
+                </ul>
+              </li>
+            </ul>
+          </li>
+          {% if user.is_authenticated %}
+                            <a href="#" class="nav-item nav-link">Hello,{{user.username}}</a>
+                            <div>
+
+                              <a href="{% url 'auth:logout' %}" class="nav-item nav-link">Logout</a>
+
+                             {% else %}
+
+                                <a href="{% url 'auth:register' %}" class="nav-item nav-link">Register</a>
+                                 <a href="{% url 'auth:login' %}" class="nav-item nav-link">Login</a>
+                               {% endif %}
+                            </div>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+
+
+  <main id="main">
+
+
+
+<center><h1> Please fill this form</h1>
+<form name="form1" id="form1" action="" method="post">
+    {% csrf_token %}
+  <label> Firstname </label>
+<input type="text" name="firstname" size="15"/> <br> <br>
+<label> Lastname: </label>
+<input type="text" name="lastname" size="15"/> <br> <br>
+ <label> Date of birth </label>
+<input type="date" name="dob" size="15"/> <br> <br>
+     <label> Age </label>
+<input type="number" name="age" size="15"/> <br> <br>
+
+Gender :
+</label><br>
+<input type="radio" name="male"/> Male <br>
+<input type="radio" name="female"/> Female <br>
+<input type="radio" name="other"/> Other
+<br>
+<br>
+Phone :
+</label>
+<input type="text" name="country code"  value="+91" size="2"/>
+<input type="text" name="phone" size="10"/> <br> <br>
+Email:
+<input type="email" id="email" name="email"/> <br>
+<br> <br>
+Address
+  <br>
+<textarea cols="80" rows="5" value="address">
+</textarea>
+<br> <br>
+
+District:
+  <select name="Profession" id="Profession">
+    <option value="" selected="selected">Select District</option>
+  </select>
+Branch:
+  <select name="Specialism" id="Specialism">
+    <option value="" selected="selected">Please select District first</option>
+  </select>
+
+<br><br><label>
+Account Type:
+</label>
+<select>
+<option value="sac">Savings</option>
+<option value="cac">Current</option>
+<option value="fd">Fixed Deposit</option>
+<option value="rd">Reccuring Deposit</option>
+<option value="cf">Chit Funds</option>
+</select>
+
+<br><br>
+
+
+
+
+<label>
+Materials Provide:</label><br>
+    <input type="checkbox" id="1" name="Cheque book" value="cheque">
+<label for="1"> Cheque Book</label><br>
+<input type="checkbox" id="2" name="Debit" value="Debit">
+<label for="2"> Debit Card</label><br>
+<input type="checkbox" id="3" name="credit" value="credit">
+<label for="3">Credit Card</label><br><br><br>
+
+    <input type="submit" class="btn btn-secondary"><br>
+  <br> <a href="{% url 'auth:logout' %}" class="btn btn-danger">Logout</a></center>
+
+</form><br>
+{% for msg in messages %}
+
+<h3>{{msg}}</h3><h6>Please wait while we verify your data. After verification, you will be receiving a call from our executive. </h6>
+<br><br>
+<center>  <h5>Click to return to the home page.We encourage you to log out </h5><a href="{% url 'bankapp:home' %}" class="btn btn-success">Home</a>
+  <a href="{% url 'auth:logout' %}" class="btn btn-danger">Logout</a></center>
+
+
+
+{% endfor %}
+<br><br></center>
+<div class="container">
+    <ul>
+        <li>Mandatory fields are marked with an asterisk (*) </li>
+        <li>Do not provide your username and password anywhere other than in this page</li>
+        <li>Your username and password are highly confidential. Never part with them.Secure.IT Bank will never ask for this information.</li>
+
+    </ul>
+
+    <br><br><br>
+<p>NEVER respond to any popup,email, SMS or phone call, no matter how appealing or official looking, seeking your personal information such as username, password(s), mobile number, ATM Card details, etc. Such communications are sent or created by fraudsters to trick you into parting with your credentials.</p>
+
+</div>
+<br>
+<br>
+
+  </main><!-- End #main -->
+
+<footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-4 col-md-6">
+            <div class="footer-info">
+              <h3>Secure.IT</h3>
+              <p>
+                A108 Adam Street <br>
+                NY 535022, USA<br><br>
+                <strong>Phone:</strong> +1 5589 55488 55<br>
+                <strong>Email:</strong> info@example.com<br>
+              </p>
+              <div class="social-links mt-3">
+                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Online Banking</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Credit & Debit Cards</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Loans</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Mobile banking</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Investments</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4 col-md-6 footer-newsletter">
+            <h4>Our Newsletter</h4>
+            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
+            <form action="" method="post">
+              <input type="email" name="email"><input type="submit" value="Subscribe">
+            </form>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Secure.IT</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/day-multipurpose-html-template-for-free/ -->
+
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'assets/js/main.js' %}"></script>
+
+</body>
+
+</html>

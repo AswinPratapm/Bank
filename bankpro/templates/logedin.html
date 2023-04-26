@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center">
+    <div class="container position-relative" data-aos="fade-up" data-aos-delay="500">
+      <h1>Welcome to Secure.IT bank, {{user.username}}</h1>
+      <h2>Known for trust, honesty, and customer care</h2>
+      <a href="{% url 'auth:form1' %}" class="btn-get-started scrollto">Access Form</a>
+    </div>
+  </section><!-- End Hero -->
+
+
+
+{% endblock %}
